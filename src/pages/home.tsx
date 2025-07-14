@@ -1,7 +1,7 @@
 function Home() {
     return (
         <div>
-            <div className="preloader"></div>
+            {/* <div className="preloader"></div> */}
             <div className="main-wrap">
                 <div className="nav-header bg-transparent shadow-none border-0">
                     <div className="nav-top w-100">
@@ -9,7 +9,7 @@ function Home() {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat" style={{ backgroundImage: "url(images/login-bg.jpg)" }}></div>
+                    <div className="col-xl-5 d-none d-xl-block p-0 vh-100 bg-image-cover bg-no-repeat" style={{ backgroundImage: "url(/images/login-bg.jpg)" }}></div>
                     <div className="col-xl-7 vh-100 align-items-center d-flex bg-white rounded-3 overflow-hidden">
                         <div className="card shadow-none border-0 ms-auto me-auto login-card">
                             <div className="card-body rounded-0 text-left">
