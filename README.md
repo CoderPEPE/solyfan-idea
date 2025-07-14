@@ -1,1 +1,1 @@
-# Solyfan is the revoutionary social media decentralized application
+# Solyfans - Solana powered content delivery
