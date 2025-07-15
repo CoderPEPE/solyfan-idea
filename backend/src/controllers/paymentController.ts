@@ -35,7 +35,8 @@ export const createPayment = async (req: AuthRequest, res: Response) => {
       amount,
       currency: currency || 'USD',
       paymentMethod,
-      status: 'pending'
+      status: 'pending',
+      id: ''
     });
 
     res.status(201).json({
@@ -86,7 +87,7 @@ export const processPayment = async (req: Request, res: Response) => {
         if (subscription) {
           subscription.status = 'active';
           await subscription.save();
-          
+
           if (user && subscription.user) {
             emailService.sendSubscriptionEmail(
               user.email,

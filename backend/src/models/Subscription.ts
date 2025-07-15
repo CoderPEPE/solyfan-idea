@@ -1,4 +1,4 @@
-import { DataTypes, Model } from 'sequelize';
+import { DataTypes, Model, Association, BelongsToGetAssociationMixin } from 'sequelize';
 import sequelize from '../config/database';
 import { ISubscription } from '../types';
 import User from './User';
@@ -14,6 +14,20 @@ class Subscription extends Model<ISubscription> implements ISubscription {
   public endDate!: Date;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
+
+  // Association properties
+  public user?: User; // The creator being subscribed to
+  public subscriber?: User; // The user who is subscribing
+
+  // Association methods
+  public getUser!: BelongsToGetAssociationMixin<User>;
+  public getSubscriber!: BelongsToGetAssociationMixin<User>;
+
+  // Association static property
+  public static associations: {
+    user: Association<Subscription, User>;
+    subscriber: Association<Subscription, User>;
+  };
 }
 
 Subscription.init({

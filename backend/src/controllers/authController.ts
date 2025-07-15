@@ -29,7 +29,9 @@ export const register = async (req: Request, res: Response) => {
     const user = await User.create({
       email,
       password: hashedPassword,
-      role: role || 'consumer'
+      role: role || 'consumer',
+      id: '',
+      isActive: false
     });
 
     const token = generateToken({ id: user.id, email: user.email });

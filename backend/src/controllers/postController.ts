@@ -18,7 +18,10 @@ export const createPost = async (req: AuthRequest, res: Response) => {
       content: content || '',
       mediaUrls: mediaUrls || [],
       mediaTypes: mediaTypes || [],
-      isPublic: isPublic || false
+      isPublic: isPublic || false,
+      id: '',
+      likesCount: 0,
+      commentsCount: 0
     });
 
     const postWithUser = await Post.findByPk(post.id, {

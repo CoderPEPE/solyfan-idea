@@ -1,6 +1,7 @@
-import { DataTypes, Model } from 'sequelize';
+import { DataTypes, Model, Association, HasManyGetAssociationsMixin } from 'sequelize';
 import sequelize from '../config/database';
 import { IUser } from '../types';
+import Post from './Post';
 
 class User extends Model<IUser> implements IUser {
   public id!: string;
@@ -13,6 +14,15 @@ class User extends Model<IUser> implements IUser {
   public isActive!: boolean;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
+
+  // Association properties
+  public posts?: Post[]; // Will be populated when including posts
+  public getPosts!: HasManyGetAssociationsMixin<any>; // Method to get posts
+
+  // Association static property
+  public static associations: {
+    posts: Association<User, Post>;
+  };
 }
 
 User.init({

@@ -20,7 +20,8 @@ export const createComment = async (req: AuthRequest, res: Response) => {
     const comment = await Comment.create({
       postId,
       userId: userId!,
-      content: content.trim()
+      content: content.trim(),
+      id: ''
     });
 
     await Post.increment('commentsCount', { where: { id: postId } });

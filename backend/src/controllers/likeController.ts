@@ -31,7 +31,8 @@ export const toggleLike = async (req: AuthRequest, res: Response) => {
     } else {
       await Like.create({
         postId,
-        userId: userId!
+        userId: userId!,
+        id: ''
       });
       await Post.increment('likesCount', { where: { id: postId } });
       

@@ -51,7 +51,9 @@ export const createSubscription = async (req: AuthRequest, res: Response) => {
       type,
       amount,
       startDate,
-      endDate
+      endDate,
+      id: '',
+      status: 'active'
     });
 
     res.status(201).json({

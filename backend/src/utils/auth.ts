@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import jwt, { SignOptions } from 'jsonwebtoken';
 
 export const hashPassword = async (password: string): Promise<string> => {
   const saltRounds = 12;
@@ -17,7 +17,7 @@ export const generateToken = (payload: object): string => {
   }
   
   return jwt.sign(payload, secret, {
-    expiresIn: process.env.JWT_EXPIRES_IN || '7d'
+    expiresIn: (process.env.JWT_EXPIRES_IN || '7d') as any
   });
 };
 
