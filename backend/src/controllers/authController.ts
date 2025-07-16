@@ -25,12 +25,11 @@ export const register = async (req: Request, res: Response) => {
     }
 
     const hashedPassword = await hashPassword(password);
-    
+
     const user = await User.create({
       email,
       password: hashedPassword,
       role: role || 'consumer',
-      id: '',
       isActive: false
     });
 

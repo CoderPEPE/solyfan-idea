@@ -1,7 +1,7 @@
 import { Request } from 'express';
 
 export interface IUser {
-  id: string;
+  id?: string;
   email: string;
   password: string;
   username?: string;

@@ -60,10 +60,6 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('*', (req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
-
 app.use((error: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.error('Error:', error);
   

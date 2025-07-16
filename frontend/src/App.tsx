@@ -6,11 +6,13 @@ import Default from "./pages/default"
 import Default_analytics from "./pages/default_analytics"
 import Default_settings from "./pages/default_settings"
 import Social from "./pages/social"
+import AuthPage from "./pages/auth"
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/auth' element={<AuthPage />} />
       <Route path='/payment' element={<Payment />} />
       <Route path='/account' element={<Account />} />
       <Route path='/default' element={<Default />} />
