@@ -70,7 +70,7 @@ const Login: React.FC = () => {
             <div className="main-wrap">
                 <div className="nav-header bg-transparent shadow-none border-0">
                     <div className="nav-top w-100">
-                        <Link to="/login"><i className="feather-zap text-success display1-size me-2 ms-0"></i><span className="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">Solyfans </span> </Link>
+                        {/* <Link to="/login"><i className="feather-zap text-success display1-size me-2 ms-0"></i><span className="d-inline-block fredoka-font ls-3 fw-600 text-current font-xxl logo-text mb-0">Solyfans </span> </Link> */}
                         <button className="nav-menu me-0 ms-auto"></button>
 
                         <Link to="/login" className="header-btn d-none d-lg-block bg-dark fw-500 text-white font-xsss p-3 ms-auto w100 text-center lh-20 rounded-xl">Login</Link>
