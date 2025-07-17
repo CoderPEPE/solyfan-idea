@@ -30,7 +30,7 @@ export const register = async (req: Request, res: Response) => {
       email,
       password: hashedPassword,
       role: role || 'consumer',
-      isActive: false
+      isActive: true
     });
 
     const token = generateToken({ id: user.id, email: user.email });
