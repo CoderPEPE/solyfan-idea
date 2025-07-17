@@ -19,7 +19,7 @@ import uploadRoutes from './routes/upload';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
