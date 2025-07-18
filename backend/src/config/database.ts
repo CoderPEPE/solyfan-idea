@@ -21,7 +21,13 @@ const sequelize = new Sequelize(process.env.DB_URL, {
       require: true,
       rejectUnauthorized: false
     }
-  }
+  },
+  // Force IPv4 by setting host explicitly
+  host: 'db.nuxigwqqxiauglsijxff.supabase.co',
+  port: 5432,
+  database: 'postgres',
+  username: 'postgres',
+  password: 'bd167815cbc274b369e0c05deff7'
 });
 
 export default sequelize;
