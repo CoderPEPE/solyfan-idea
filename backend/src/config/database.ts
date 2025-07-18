@@ -5,10 +5,10 @@ dotenv.config();
 
 const sequelize = new Sequelize({
   dialect: 'postgres',
-  host: 'db.nuxigwqqxiauglsijxff.supabase.co',
-  port: 5432,
+  host: 'aws-0-eu-north-1.pooler.supabase.com',
+  port: 6543,
   database: 'postgres',
-  username: 'postgres',
+  username: 'postgres.nuxigwqqxiauglsijxff', // Note the project ref format
   password: 'bd167815cbc274b369e0c05deff7',
   logging: process.env.NODE_ENV === 'development' ? console.log : false,
   pool: {
